@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-#: "${VERSION:?Must specify VERSION (e.g. VERSION=v1.2.3)}"
-VERSION="v2.8.4"
+: "${VERSION:?Must specify VERSION (e.g. VERSION=v1.2.3)}"
 
 PROJECT_SLUG="ll-nick/leadr"
 FORMULA_NAME="Leadr"
