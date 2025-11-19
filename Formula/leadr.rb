@@ -32,17 +32,17 @@ class Leadr < Formula
   def install
     if OS.mac?
       if Hardware::CPU.arm?
-        binary_name = "leadr-v\#{version}-aarch64-apple-darwin"
+        binary_name = "leadr-v#{version}-aarch64-apple-darwin"
       else
-        binary_name = "leadr-v\#{version}-x86_64-apple-darwin"
+        binary_name = "leadr-v#{version}-x86_64-apple-darwin"
       end
     else
       if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        binary_name = "leadr-v\#{version}-x86_64-unknown-linux-musl"
+        binary_name = "leadr-v#{version}-x86_64-unknown-linux-musl"
       elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        binary_name = "leadr-v\#{version}-aarch64-unknown-linux-musl"
+        binary_name = "leadr-v#{version}-aarch64-unknown-linux-musl"
       else
-        binary_name = "leadr-v\#{version}-armv7-unknown-linux-musleabihf"
+        binary_name = "leadr-v#{version}-armv7-unknown-linux-musleabihf"
       end
     end
 
@@ -50,6 +50,6 @@ class Leadr < Formula
   end
 
   test do
-    system "\#{bin}/leadr", "--version"
+    system "#{bin}/leadr", "--version"
   end
 end

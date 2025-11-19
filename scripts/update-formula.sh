@@ -87,17 +87,17 @@ class ${FORMULA_NAME} < Formula
   def install
     if OS.mac?
       if Hardware::CPU.arm?
-        binary_name = "${BINARY_NAME}-v\#{version}-aarch64-apple-darwin"
+        binary_name = "${BINARY_NAME}-v#{version}-aarch64-apple-darwin"
       else
-        binary_name = "${BINARY_NAME}-v\#{version}-x86_64-apple-darwin"
+        binary_name = "${BINARY_NAME}-v#{version}-x86_64-apple-darwin"
       end
     else
       if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-        binary_name = "${BINARY_NAME}-v\#{version}-x86_64-unknown-linux-musl"
+        binary_name = "${BINARY_NAME}-v#{version}-x86_64-unknown-linux-musl"
       elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-        binary_name = "${BINARY_NAME}-v\#{version}-aarch64-unknown-linux-musl"
+        binary_name = "${BINARY_NAME}-v#{version}-aarch64-unknown-linux-musl"
       else
-        binary_name = "${BINARY_NAME}-v\#{version}-armv7-unknown-linux-musleabihf"
+        binary_name = "${BINARY_NAME}-v#{version}-armv7-unknown-linux-musleabihf"
       end
     end
 
@@ -105,7 +105,7 @@ class ${FORMULA_NAME} < Formula
   end
 
   test do
-    system "\#{bin}/${BINARY_NAME}", "--version"
+    system "#{bin}/${BINARY_NAME}", "--version"
   end
 end
 EOF
